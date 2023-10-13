@@ -9,11 +9,8 @@ const facilities = Schema({
     wifi: Boolean,
 },{ _id : false })
 
-module.exports.Rooms = model('Rooms', Schema({
+module.exports.Hotel = model('Hotel', Schema({
     title: String,
     description: String,
     facilities: facilities,
-    cost: {
-        type: Number
-    }
 }, {timestamps: true }) )
