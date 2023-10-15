@@ -3,12 +3,12 @@ const { Hotel } = require("./hotel.model")
 module.exports.create = async(req, res) => {
     const {
         title,
-        location,
+        locationId,
         desc,
         facilities
     } = req.body
     
-    const hotel = new Hotel({title, location});
+    const hotel = new Hotel({title, locationId});
 
     try {
         hotel.description = desc 
@@ -17,7 +17,8 @@ module.exports.create = async(req, res) => {
         return res.status(201).send({message: "hotel created"})
     } catch( error ) {
         return res.status(500).send({
-            message: "internal error, hotel creation failed"
+            message: "internal error, hotel creation failed",
+            err: error.message
         })
     } 
 }

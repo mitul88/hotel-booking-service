@@ -1,7 +1,9 @@
 const authRouter = require('../modules/auth/auth.routes')
-// const userRouter = require('../modules/user/user.routes')
+const hotelRouter = require('../modules/hotel/hotel.routes')
+const locationRouter = require('../modules/location/location.routes')
 
 module.exports = (app) => {
     app.use('/api/auth', authRouter)
-    // app.use('/api/user', userRouter)
+    app.use('/api/hotel', hotelRouter)
+    app.use('/api/location', locationRouter)
 }
